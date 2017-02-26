@@ -100,10 +100,10 @@ type DSTaskDetail struct {
 	ConnectedLeechers int    `json:"connected_leechers"`
 	ConnectedPeers    int    `json:"connected_peers"`
 	ConnectedSeeders  int    `json:"connected_seeders"`
-	CreateTime        int    `json:"create_time"`
+	CreateTime        int64  `json:"create_time"`
 	Destination       string `json:"destination"`
 	Seedelapsed       int    `json:"seedelapsed"`
-	StartedTime       int    `json:"started_time"`
+	StartedTime       int64  `json:"started_time"`
 	TotalPeers        int    `json:"total_peers"`
 	TotalPieces       int    `json:"total_pieces"`
 	UnzipPassword     string `json:"unzip_password"`
