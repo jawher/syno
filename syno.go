@@ -8,6 +8,10 @@ import (
 	"net/url"
 )
 
+var (
+	LogRequests bool
+)
+
 type Syno struct {
 	caller *caller
 
@@ -94,8 +98,10 @@ func (c *caller) call(q Query, data interface{}) error {
 		Header: make(http.Header),
 	}
 
-	dump, _ := httputil.DumpRequest(req, false)
-	fmt.Printf("%s\n", dump)
+	if LogRequests {
+		dump, _ := httputil.DumpRequest(req, false)
+		fmt.Printf("%s\n", dump)
+	}
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
